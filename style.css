@@ -1,0 +1,514 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat; /* Ito ay para maiwasan ang pag-repeated ng background image */
+}
+#title{
+  font-family: 'Agdasima', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+    text-align: center; /* I-center ang text horizontally sa loob ng div */
+    margin-bottom: 10px; /* I-adjust ang spacing pababa ng div */
+}
+.contentty {
+    height: 580px;
+    background-image: url('assets/imgs/bg123.png'); /* Ilagay ang URL ng iyong background image */
+    background-size: 100% 100%; /* I-set ang background image na mag-fill sa buong sukat ng #container */
+    background-repeat: no-repeat; /* Ito ay para maiwasan ang pag-repeated ng background image */
+    display: flex; /* Gamitin ang flexbox para i-center ang elemento */
+    justify-content: center; /* I-center ang elemento horizontally */
+    align-items: center; /* I-center ang elemento vertically */
+    flex-direction: column;
+    
+}
+.content1 {
+    height: 580px;
+    background-color: black;
+}
+.ball {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0; /* Simulan sa ibaba ng screen */
+    left: 50%; /* I-center ang bola horizontally */
+    margin-left: -25px; /* I-center ang bola horizontally */
+    animation: moveBall 2s linear infinite; /* I-set ang animation para sa bola */
+    z-index: 999;
+}
+
+/* laptop cover photo */
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns */
+    gap: 20px; /* Adjust the gap between items */
+  }
+  
+  .floating-photo-holder {
+    width: 300px; /* Adjust this value to set the width of the holder */
+    height: 300px; /* Adjust this value to set the height of the holder */
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  .floating-photo-holder:hover {
+    transform: translateY(-5px) scale(1.1); /* Adjust the amount of "floating" effect and zoom scale */
+  }
+  
+  .floating-photo-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* laptop cover photo end*/
+.container {
+    width: 100px; /* I-set ang sukat ng container */
+    height: 200px; /* I-set ang sukat ng container */
+    overflow: hidden; /* Ito ay upang hindi mag-overflow ang imahe sa container */
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Baguhin ang direction ng flexbox sa column */
+    justify-content: center;
+    align-items: center;
+}
+/* header  {
+    display: none;
+} */
+header  {
+    z-index: 999;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.1); /* Light color with transparency */
+    color: #ccc;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    height: 50px;
+    font-family: 'Agdasima', sans-serif;
+    z-index: 99;
+}
+
+.logo img {
+    max-height: 50px; /* Adjust this to the appropriate size for your logo */
+    margin-right: 5px;
+}
+
+.heading {
+    font-size: 24px;
+    margin: 0;
+    color: 552acb;
+}
+
+.centered-button {
+    position: relative;
+    padding: 10px;
+    font-size: 24px; /* Palakihin ang text size */
+    width: 200px; /* Palakihin ang sukat ng button */
+    height: 60px; /* Palakihin ang sukat ng button */
+    font-family: 'Agdasima', sans-serif;
+    border: none; /* Alisin ang border */
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer; /* Magiging cursor pointer kapag inilipat ang mouse dito */
+    transition: background-color 0.3s, transform 0.3s; /* Transition sa background-color at transform */
+    background-color: rgba(242, 232, 232, 0.1); /* Light color with transparency */
+    color: #ffffff;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+}
+.centered-button:hover {
+    background-color: #fff; /* Puting kulay pag-hover */
+    transform: scale(1.1); /* Zoom-in effect pag-hover */
+}
+
+@keyframes moveBall {
+    0% {
+        bottom: 20; /* I-reset ang posisyon sa itaas ng container */
+        transform: rotate(0deg); /* I-reset ang rotation sa 0 degrees */
+    }
+    50% {
+        bottom: 100px; /* Ilagay ang imahe pababa ng 100px */
+        transform: rotate(180deg); /* I-rotate ang imahe ng 180 degrees */
+    }
+    100% {
+        bottom: 20; /* I-reset ang posisyon sa itaas ng container */
+        transform: rotate(360deg); /* I-rotate ang imahe ng 360 degrees */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .contentty {  
+        background-image: none;
+        background-color: black;
+        height: 710px;
+    }
+    #title{
+      font-size: 80px;
+    }
+    .content{
+      margin-top: 70px;
+    }
+    .tabs{
+      margin-top: 70px;
+    }
+    .titlemob{
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      display: flex;
+      margin-top: 35px;
+      text-align: center;
+      align-items: center;
+      font-weight: bold;
+      justify-content: center;
+  }
+  .titledesc{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+    .contentmob {  
+        height: fit-content;
+        background-color: rgb(220, 220, 220);
+    }
+    header  {
+        height: 70px;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* I-set ang grid layout */
+        gap: 30px; /* Space sa pagitan ng mga grid items */
+        padding: 20px; /* Padding para sa layout */
+    }
+    .content1 {
+        height: 1050px;
+        background-color: black;
+    }
+    .centered {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 300px;
+      }
+      .image-container {
+        position: absolute; /* Upang maging base para sa mga larawan */
+        width: 350px; /* Lapad ng div */
+        height: 300px; /* Taas ng div */
+        bottom: 0; /* I-align ang larawan sa ibaba ng div */
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    
+      /* Estilo para sa larawang nasa ibabaw */
+      .top-image {
+        position: absolute; /* I-position ang larawan sa ibabaw ng div */
+        width: 300px; /* Lapad ng larawan */
+        height: 200px; /* Taas ng larawan */
+        z-index: 999;
+        top: 50%; /* I-center vertically */
+        left: 50%; /* I-center horizontally */
+        transform: translate(-50%, -50%); /* I-center sa gitna */
+      }
+      .photos {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1px));
+        grid-gap: 20px;
+        padding: 20px;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+        width: auto;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+      .custom{
+        margin-left: 15px;
+      }
+      
+      .photos .photos-container {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%; /* Maintain a 1:1 aspect ratio */
+        position: relative;
+        overflow: hidden;
+        border-radius: 20px;
+      }
+    
+      .photos img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: fill; /* Make the image cover the container */
+        border-radius: 20px;
+      }
+      .gradient-button {
+        font-family: 'Courier New', Courier, monospace;
+        background: linear-gradient(to bottom, #8e44ad, #c0392b);
+        border: none;
+        width: fit-content;
+        color: white;
+        align-items: center;
+        position: absolute;
+        margin-top: 110px;
+        justify-content: center;
+        display: flex;
+        padding: 10px 10px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 15px;
+        position: absolute;
+        top: 50%; /* I-center vertically */
+        left: 50%; /* I-center horizontally */
+        transform: translate(-50%, -50%); /* I-center sa gitna */
+    }
+  
+    .gradient-button:hover {
+        background: linear-gradient(to bottom, #c0392b, #8e44ad);
+    }
+    
+    .tab-container {
+      display: flex;
+      
+      
+    }
+
+    .tabs {
+      width: 150px;
+      background: linear-gradient(to bottom, #8e44ad, #c0392b);
+      color: #000000;
+      padding: 10px;
+      position: relative;
+      border: 2px solid linear-gradient(to bottom, #8e44ad, #c0392b);
+      /* font-family: 'Young Serif', serif; */
+      font-family: 'Agdasima', sans-serif;
+      display: none;
+    }
+    #myDiv {
+      transition: transform 1s ease-in-out;
+    }
+  
+    .tab {
+      cursor: pointer;
+      margin: 5px 0;
+      padding: 5px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+      position: relative; 
+    }
+    .bg img{
+      height: 30px;
+      width: 30px;
+    }
+    .bb{
+      display: none;
+    }
+}
+
+  
+@media (min-width: 800px) {
+      .contentmob {  
+          /* height: 710px; */
+          background-color: rgb(220, 220, 220);
+      }
+      
+      .title {
+        position: absolute; /* Upang maging base para sa mga larawan */
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        margin-right: 100px;
+      }
+      .image-container {
+        position: absolute; /* Upang maging base para sa mga larawan */
+        width: 550px; /* Lapad ng div */
+        height: 400px; /* Taas ng div */
+        bottom: 0; /* I-align ang larawan sa ibaba ng div */
+        margin-bottom: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        right: 0;
+        margin-right: 100px;
+      }
+      /* Estilo para sa larawang nasa ibabaw */
+      .top-image {
+        position: absolute; /* I-position ang larawan sa ibabaw ng div */
+        width: 450px; /* Lapad ng larawan */
+        height: 300px; /* Taas ng larawan */
+        z-index: 99;/* Karaniwang border */
+        border-radius: 10px; /* I-add ang border radius */
+        top: 50%; /* I-center vertically */
+        left: 50%; /* I-center horizontally */
+        transform: translate(-50%, -50%); /* I-center sa gitna */
+      }
+      .titlemob{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 30px;
+        display: flex;
+        margin-top: 100px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .content{
+      margin-top: 50px;
+    }
+    .tabs{
+      margin-top: 50px;
+    }
+    .titledesc{
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 15px;
+      display: flex;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+  }
+    .gradient-button {
+      font-family: 'Courier New', Courier, monospace;
+      background: linear-gradient(to bottom, #8e44ad, #c0392b);
+      border: none;
+      width: fit-content;
+      color: white;
+      align-items: center;
+      position: absolute;
+      margin-top: 50px;
+      justify-content: center;
+      display: flex;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+      cursor: pointer;
+      border-radius: 15px;
+      position: absolute;
+      top: 50%; /* I-center vertically */
+      left: 50%; /* I-center horizontally */
+      transform: translate(-50%, -50%); /* I-center sa gitna */
+  }
+
+  .gradient-button:hover {
+      background: linear-gradient(to bottom, #c0392b, #8e44ad);
+  }
+    
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(500px, 1px));
+      grid-gap: 20px;
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+      padding-top: 50px;
+      
+    }
+    .custom{
+      margin-left: 15px;
+    }
+    
+    .photos .photos-container {
+      width: 100%;
+      height: 0;
+      padding-bottom: 100%; /* Maintain a 1:1 aspect ratio */
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+    }
+  
+    .photos img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill; /* Make the image cover the container */
+      border-radius: 20px;
+    }
+    .tab-container {
+      display: flex;
+      
+  }
+  
+  .tabs {
+      width: 250px;
+      background: linear-gradient(to bottom, #8e44ad, #c0392b);
+      color: #000000;
+      padding: 10px;
+      position: relative;
+      border: 2px solid linear-gradient(to bottom, #8e44ad, #c0392b);
+      /* font-family: 'Young Serif', serif; */
+      font-family: 'Agdasima', sans-serif;
+  }
+  
+  .tab {
+      cursor: pointer;
+      margin: 5px 0;
+      padding: 5px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+      position: relative; 
+  }
+  .bg {
+    display: none;
+  }
+    
+}
+.content-mob{
+  background-color: rgb(220, 220, 220);
+  
+}
+
+
+.tab:hover {
+    background-color: #d8c5c5;
+}
+
+.tab.active {
+    background-color: rgb(220, 220, 220);
+}
+
+.tab-content {
+    display: none;
+    padding: 10px;
+    /* border: 2px solid #2196F3;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px; */
+}
+
+.tab-content.active {
+    display: block;
+}
+h5{
+  font-family: 'Agdasima', sans-serif;
+  
+}
+li{
+  font-family: 'Agdasima', sans-serif;
+  font-size: 20px;
+  color: #8e44ad;
+}
+
+
